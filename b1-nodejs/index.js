@@ -10,6 +10,7 @@ app.use(express.urlencoded({ extended: true })) // for parsing application/x-www
     //thêm 2 dòng lệnh trên để sử dụng req.body
 app.set('view engine', 'pug');
 app.set('views', './views');
+app.use(express.static('public'));
 
 app.get('/', (req, res) => res.render('index', {
     name: 'hai',

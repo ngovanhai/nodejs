@@ -1,5 +1,8 @@
-h1 User hihi
-a(href="/users/create") create
-ul
-    each user in users
-        li= user.name
+extends ../layouts/common
+
+block  content
+    h1 User hihi
+    a(href="/users/create") create
+    ul
+        each user in users
+            li= user.name

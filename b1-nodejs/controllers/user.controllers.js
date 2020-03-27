@@ -9,7 +9,7 @@ module.exports.index = function(req, res) {
 
 module.exports.search = (req, res) => {
     var q = req.query.q;
-    var matchdUsers = db.get('users').filter(function(user) {
+    var matchdUsers = db.get('users').value().filter(function(user) {
         return user.name.indexOf(q) !== -1;
     });
 
@@ -31,8 +31,23 @@ module.exports.get = function(req, res) {
 }
 module.exports.postcreate = (req, res) => {
     req.body.id = shortid.generate();
+    var errors = [];
+    if (!req.body.name) {
+        errors.push('name is requied');
+    }
+    if (!req.body.phone) {
+        errors.push('phone is requied');
+    }
+    if (errors.length) {
+        res.render("users/create", {
+            errors: errors,
+            values: req.body
+        });
+        return;
+
+    }
     db.get('users').push(req.body).write();
     // thêm bản ghi vào bảng users 
-    res.redirect('');
+    res.redirect('/users');
     // quay lại trang users
 }

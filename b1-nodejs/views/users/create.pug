@@ -1,6 +1,19 @@
-h1 Create
-form(action="/users/create" method="POST")
-    lable Name
-    input(name="name",type="text")
-    button Create
+extends ../layouts/common
+
+block  content
+        h1 Create
+
+        if errors
+            each error in errors
+                .alert.alert-danger= errors
+        form(action="/users/create" method="POST")
+            .form-group
+                label(for='name') Tên
+                input#name.form-control(type='text',name="name"  placeholder='Tên',
+                value=values ? values.name : "")
+            .form-group
+                label(for='phone') phone
+                input#phone.form-control(type='text',name="phone"
+                value= values ? values.phone : "")
+            button.btn.btn-primary Create
 

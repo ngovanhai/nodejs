@@ -1,13 +1,25 @@
-h1 User
+extends ../layouts/common
 
-form(action="/users/search",method="GET")
-    input(type="text" ,name="q")
-    button Search
+block  content
 
-ul
-    each user in users
-        li
-            span=user.name
-            span &nbsp;
-            a(href="/users/" + user.id) view
-a(href='/users/create') new
+        h1 
+            span User
+              a.btn.btn-primary.ml-2(href='/users/create') new
+        .d-flex.align-items-center
+            nav.navbar.navbar-light.bg-light.ml-auto
+                form(action="/users/search",method="GET").form-inline
+                    input.form-control.mr-sm-2(type='search',name="q" placeholder='Search' aria-label='Search')
+                    button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
+        
+        table.table 
+            tr
+                th Name
+                th Phone
+                th Action
+            each user in users
+                tr
+                    td=user.name
+                    td= user.phone
+                    td
+                        a.btn.btn-light(href="/users/" + user.id) view
+

@@ -12,7 +12,7 @@ var app = express();
 app.use(express.json()); // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
     //thêm 2 dòng lệnh trên để sử dụng req.body
-app.use(cookieParser());
+app.use(cookieParser('yasghjdgashjfg'));
 app.set('view engine', 'pug');
 app.set('views', './views');
 

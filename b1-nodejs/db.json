@@ -5,7 +5,7 @@
       "phone": "123456",
       "id": "2hSCGAg0D",
       "email": "hai1005@gmail.com",
-      "password": "123456"
+      "password": "e10adc3949ba59abbe56e057f20f883e"
     },
     {
       "name": "huy",
@@ -13,6 +13,12 @@
       "id": "_13tI5-qj",
       "email": "test@gmail.com",
       "password": "12345"
+    },
+    {
+      "name": "hai",
+      "phone": "123456",
+      "password": "e10adc3949ba59abbe56e057f20f883e",
+      "id": "E4s_l5jpc"
     }
   ]
 }

@@ -1,4 +1,7 @@
+var md5 = require('md5');
+
 var db = require('../db');
+
 var shortid = require('shortid');
 
 module.exports.index = function(req, res) {
@@ -30,22 +33,23 @@ module.exports.get = function(req, res) {
     });
 }
 module.exports.postcreate = (req, res) => {
+    req.body.password = md5(req.body.password);
     req.body.id = shortid.generate();
-    var errors = [];
-    if (!req.body.name) {
-        errors.push('name is requied');
-    }
-    if (!req.body.phone) {
-        errors.push('phone is requied');
-    }
-    if (errors.length) {
-        res.render("users/create", {
-            errors: errors,
-            values: req.body
-        });
-        return;
+    // var errors = [];
+    // if (!req.body.name) {
+    //     errors.push('name is requied');
+    // }
+    // if (!req.body.phone) {
+    //     errors.push('phone is requied');
+    // }
+    // if (errors.length) {
+    //     res.render("users/create", {
+    //         errors: errors,
+    //         values: req.body
+    //     });
+    //     return;
 
-    }
+    // }
     db.get('users').push(req.body).write();
     // thêm bản ghi vào bảng users 
     res.redirect('/users');

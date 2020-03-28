@@ -3,12 +3,16 @@
     {
       "name": "ty",
       "phone": "123456",
-      "id": "2hSCGAg0D"
+      "id": "2hSCGAg0D",
+      "email": "hai1005@gmail.com",
+      "password": "123456"
     },
     {
       "name": "huy",
       "phone": "4568",
-      "id": "_13tI5-qj"
+      "id": "_13tI5-qj",
+      "email": "test@gmail.com",
+      "password": "12345"
     }
   ]
 }

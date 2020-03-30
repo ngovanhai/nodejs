@@ -1,27 +1,8 @@
-//- extends ../layouts/common
-
-//- block  content
-//-     h1 View user 
-//-     p
-//-         b Name
-//-         span &nbsp;
-//-         span= user.name
 extends ../layouts/common
 
 block  content
-        h1 LOGIN
-
-        if errors
-            each error in errors
-                .alert.alert-danger= errors
-        form(action="/users/create" method="POST")
-            .form-group
-                label(for='name') Tên
-                input#name.form-control(type='text',name="name"  placeholder='Tên',
-                value=values ? values.name : "")
-            .form-group
-                label(for='password') password
-                input#password.form-control(type='password',name="password"
-                value= values ? values.password : "")
-            button.btn.btn-primary login
-
+    h1 View user 
+    p
+        b Name
+        span &nbsp;
+        span= user.name

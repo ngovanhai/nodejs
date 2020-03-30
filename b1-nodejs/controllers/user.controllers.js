@@ -7,13 +7,13 @@ var shortid = require('shortid');
 module.exports.index = function(req, res) {
     res.render('users/index', {
         users: db.get('users').value()
-    })
-}
+    });
+};
 
 module.exports.search = (req, res) => {
     var q = req.query.q;
     var matchdUsers = db.get('users').value().filter(function(user) {
-        return user.name.indexOf(q) !== -1;
+        return user.name.toLowerCase().indexOf(q.toLowerCase()) !== -1;
     });
 
     res.render('users/index', {
@@ -34,6 +34,7 @@ module.exports.get = function(req, res) {
 }
 module.exports.postcreate = (req, res) => {
     req.body.password = md5(req.body.password);
+    req.body.avatar = req.file.path.split('/').slice(1).join('/');
     req.body.id = shortid.generate();
     // var errors = [];
     // if (!req.body.name) {

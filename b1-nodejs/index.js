@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 
 var userRouter = require('./router/user.router');
 var authRouter = require('./router/auth.router');
+var productRouter = require('./router/product.router');
 
 var authMiddleware = require('./middleware/auth.middleware');
 
@@ -27,6 +28,7 @@ app.get('/', (req, res) => res.render('index', {
 
 app.use('/users', authMiddleware.requireAuth, userRouter);
 app.use('/auth', authRouter);
+app.use('/product', productRouter);
 // sau đuôi users sẽ thực hiện gọi các usersRouter
 
 app.listen(port, function() {

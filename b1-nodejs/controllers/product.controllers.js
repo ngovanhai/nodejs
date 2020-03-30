@@ -9,3 +9,7 @@ module.exports.index = function(req, res) {
         products: db.get('products').value().slice(start, end)
     })
 };
+
+module.exports.cart = function(req, res) {
+    res.render('product/menucart');
+}

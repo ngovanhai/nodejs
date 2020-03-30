@@ -32,25 +32,19 @@ module.exports.get = function(req, res) {
         user: user
     });
 }
+
+module.exports.delete = function(req, res) {
+    var id = req.params.id;
+    db.get('users')
+        .remove({ id: id })
+        .write()
+    res.redirect('/users')
+}
+
 module.exports.postcreate = (req, res) => {
     req.body.password = md5(req.body.password);
     req.body.avatar = req.file.path.split('/').slice(1).join('/');
     req.body.id = shortid.generate();
-    // var errors = [];
-    // if (!req.body.name) {
-    //     errors.push('name is requied');
-    // }
-    // if (!req.body.phone) {
-    //     errors.push('phone is requied');
-    // }
-    // if (errors.length) {
-    //     res.render("users/create", {
-    //         errors: errors,
-    //         values: req.body
-    //     });
-    //     return;
-
-    // }
     db.get('users').push(req.body).write();
     // thêm bản ghi vào bảng users 
     res.redirect('/users');

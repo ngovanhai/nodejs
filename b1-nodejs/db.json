@@ -1,51 +1,25 @@
 {
   "users": [
     {
-      "name": "ty",
-      "phone": "123456",
-      "id": "2hSCGAg0D",
-      "email": "hai1005@gmail.com",
-      "password": "e10adc3949ba59abbe56e057f20f883e"
-    },
-    {
-      "name": "huy",
-      "phone": "4568",
-      "id": "_13tI5-qj",
-      "email": "test@gmail.com",
-      "password": "12345"
-    },
-    {
-      "name": "hai",
-      "phone": "123456",
-      "password": "e10adc3949ba59abbe56e057f20f883e",
-      "id": "E4s_l5jpc"
-    },
-    {
-      "name": "hai1005",
+      "name": "hai1005@gmail.com",
       "phone": "1638866506",
-      "password": "e10adc3949ba59abbe56e057f20f883e",
-      "id": "HR0rKt3lF"
-    },
-    {
-      "name": "hong",
-      "phone": "12365",
-      "password": "e10adc3949ba59abbe56e057f20f883e",
-      "avatar": "uploads,3cd62b15b591b1bf06a0d4d0e9c26deb",
-      "id": "CgwEhX9j9"
-    },
-    {
-      "name": "hai",
-      "phone": "1638866506",
-      "password": "b5b037a78522671b89a2c1b21d9b80c6",
+      "password": "827ccb0eea8a706c4c34a16891f84e7b",
       "avatar": "uploads/e99e69ef3c926ab2264542ec566470ed",
       "id": "FJkDBplQp"
     },
     {
-      "name": "hai",
+      "name": "test@gmail.com",
       "phone": "123456",
       "password": "827ccb0eea8a706c4c34a16891f84e7b",
       "avatar": "uploads/6d443d5900e03f42bfcfdf1319d7de40",
       "id": "Wvxq9AcNT"
+    },
+    {
+      "name": "98@gmail.com",
+      "phone": "1638866506",
+      "password": "e10adc3949ba59abbe56e057f20f883e",
+      "avatar": "uploads/f2568fd4b47ebf80ca309e9df446cad3",
+      "id": "7u3gaRlv_u"
     }
   ],
   "products": [
@@ -648,6 +622,16 @@
       "name": "Extract - Rum",
       "image": "https://loremflickr.com/320/240",
       "description": "dolor sit amet consectetuer adipiscing elit proin interdum mauris non ligula pellentesque ultrices phasellus id sapien in sapien iaculis congue"
+    }
+  ],
+  "sessions": [
+    {
+      "id": "WVzXQTMu6",
+      "cart": {
+        "9cb2572e-3271-445e-901a-a8eef65dac2c": 3,
+        "2b789a59-eb13-47f2-b03a-238b8608344b": 1,
+        "0d005c13-9e8b-447e-a5e8-7fb8bf50157d": 1
+      }
     }
   ]
 }

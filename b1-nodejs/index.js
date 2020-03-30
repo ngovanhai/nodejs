@@ -7,7 +7,9 @@ var cookieParser = require('cookie-parser');
 var userRouter = require('./router/user.router');
 var authRouter = require('./router/auth.router');
 var productRouter = require('./router/product.router');
+var cartRouter = require('./router/cart.router');
 
+var sessionMiddleware = require('./middleware/session.middleware');
 var authMiddleware = require('./middleware/auth.middleware');
 
 var port = 3000;
@@ -19,6 +21,7 @@ app.use(express.urlencoded({ extended: true })) // for parsing application/x-www
 app.use(cookieParser('yasghjdgashjfg'));
 app.set('view engine', 'pug');
 app.set('views', './views');
+app.use(sessionMiddleware);
 
 app.use(express.static('public'));
 
@@ -29,6 +32,7 @@ app.get('/', (req, res) => res.render('index', {
 app.use('/users', authMiddleware.requireAuth, userRouter);
 app.use('/auth', authRouter);
 app.use('/product', productRouter);
+app.use('/cart', cartRouter);
 // sau đuôi users sẽ thực hiện gọi các usersRouter
 
 app.listen(port, function() {
